@@ -1,0 +1,14 @@
+{
+    "function_name": "equals",
+    "num_points": 8,
+    "io_pairs":
+    (
+        (((1,2,3), (1,2,3)), "Equals"),
+        (((1,1,1), (1,0,1)), "Not Equals"),
+        (((-1,-2,-3), ("-1","-2","-3")), "Not Equals"),
+        (((10,10,1,10), (10,10,1,10)), "Equals"),
+        ((("55",10),("22-12",10)), "Not Equals"),
+        (((3,2,1),(1,2,3)), "Not Equals"),
+        ((("Perfectly balanced", "As all things should be"), ("Perfectly balanced", "As all things should be")), "Equals"),
+    )
+}
