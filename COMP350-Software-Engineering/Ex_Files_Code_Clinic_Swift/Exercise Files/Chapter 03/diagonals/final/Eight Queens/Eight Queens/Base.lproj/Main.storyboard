@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Eight_Queens" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chessboard.png" translatesAutoresizingMaskIntoConstraints="NO" id="08z-wf-KwO">
+                                <rect key="frame" x="11.5" y="167.5" width="352" height="352"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="352" id="VEp-P4-c5R"/>
+                                    <constraint firstAttribute="width" constant="352" id="uyR-Ak-4Ty"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="queen.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-Nv-TZb">
+                                <rect key="frame" x="44" y="190" width="36" height="37.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="queen.png" translatesAutoresizingMaskIntoConstraints="NO" id="4lh-Xg-VeM">
+                                <rect key="frame" x="80" y="190" width="36" height="37.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="queen.png" translatesAutoresizingMaskIntoConstraints="NO" id="ScD-H3-uch">
+                                <rect key="frame" x="115" y="190" width="36" height="37.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="queen.png" translatesAutoresizingMaskIntoConstraints="NO" id="hyr-GJ-NjE">
+                                <rect key="frame" x="152" y="190" width="36" height="37.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="queen.png" translatesAutoresizingMaskIntoConstraints="NO" id="02X-dq-mdt">
+                                <rect key="frame" x="188" y="190" width="36" height="37.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="queen.png" translatesAutoresizingMaskIntoConstraints="NO" id="wzA-ij-im4">
+                                <rect key="frame" x="261" y="190" width="36" height="37.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="queen.png" translatesAutoresizingMaskIntoConstraints="NO" id="j20-S5-mSX">
+                                <rect key="frame" x="296" y="190" width="36" height="37.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solution: 00/00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgh-ps-9gQ">
+                                <rect key="frame" x="16" y="626" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3E-ZC-4Er">
+                                <rect key="frame" x="141" y="551" width="92" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Du8-1m-TeY"/>
+                                </constraints>
+                                <state key="normal" title="Next Solution"/>
+                                <connections>
+                                    <action selector="nextSolution" destination="BYZ-38-t0r" eventType="touchUpInside" id="jlf-8e-LuP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Eight Queens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igI-wx-yG5">
+                                <rect key="frame" x="16" y="29" width="343" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="queen.png" translatesAutoresizingMaskIntoConstraints="NO" id="sZs-0P-RNB">
+                                <rect key="frame" x="225" y="190" width="36" height="37.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="q3E-ZC-4Er" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8it-dl-BDa"/>
+                            <constraint firstItem="08z-wf-KwO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8kq-Y7-zav"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vgh-ps-9gQ" secondAttribute="bottom" constant="20" id="AE0-5S-gfp"/>
+                            <constraint firstItem="08z-wf-KwO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Gtu-jK-qmO"/>
+                            <constraint firstItem="vgh-ps-9gQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JyV-v9-PxV"/>
+                            <constraint firstItem="q3E-ZC-4Er" firstAttribute="top" secondItem="08z-wf-KwO" secondAttribute="bottom" constant="31.5" id="Vm8-By-RwF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vgh-ps-9gQ" secondAttribute="trailing" constant="16" id="k5d-Xg-Ke0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelSolution" destination="vgh-ps-9gQ" id="8yz-sr-BFc"/>
+                        <outlet property="q1" destination="Ep9-Nv-TZb" id="SSQ-7l-VtE"/>
+                        <outlet property="q2" destination="4lh-Xg-VeM" id="KPY-aq-OXu"/>
+                        <outlet property="q3" destination="ScD-H3-uch" id="nsa-cf-YCI"/>
+                        <outlet property="q4" destination="hyr-GJ-NjE" id="Opi-yi-RiJ"/>
+                        <outlet property="q5" destination="02X-dq-mdt" id="VbO-jV-ouH"/>
+                        <outlet property="q6" destination="sZs-0P-RNB" id="Hh8-GX-EYM"/>
+                        <outlet property="q7" destination="wzA-ij-im4" id="GUo-zj-JmI"/>
+                        <outlet property="q8" destination="j20-S5-mSX" id="OSf-yJ-7rn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chessboard.png" width="750" height="721"/>
+        <image name="queen.png" width="75" height="75"/>
+    </resources>
+</document>
