@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/echocli.dir/echocli.c.o -o echocli 

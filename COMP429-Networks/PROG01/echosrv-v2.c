@@ -22,10 +22,12 @@
 #define MAX_CLIENTS 10
 
 int sockfd;     
+int total_clients = 0;
 
 void quit(int);
 void sub_client(int);
 void handle_request(int, struct sockaddr_in*); 
+
 
 int
 main(int argc, char** argv)
@@ -50,7 +52,7 @@ main(int argc, char** argv)
 
     struct sockaddr_in sa = {
         .sin_family = AF_INET,       // 32 bit address family IPv4
-        .sin_port = htons(PORT),     // 16 bit port number 9001
+        .sin_port = htons(PORT),     // 16 bit port number 9001 (big-endian)
         .sin_addr = htonl(INADDR_ANY)     // 32 bit value address
     };
     /* 
@@ -78,7 +80,7 @@ main(int argc, char** argv)
     for(;;) {
         struct sockaddr_in* clia = malloc(sizeof(struct sockaddr_in)); // client address
         socklen_t addrlen = sizeof(struct sockaddr_in);                // address length
-        int clifd = accept(sockfd, (struct sockaddr*) clia, &addrlen); // line of communication
+        int clifd = accept(sockfd, (struct sockaddr*) clia, &addrlen); // client file descriptor line of communication socket
         if(clifd < 0) {
             perror("Problem with accept()");
             continue;
@@ -86,6 +88,13 @@ main(int argc, char** argv)
 
         // TODO: fork a child process if there is still room for clients
         //       call the handle_request function for the child process
+        if(total_clients >= MAX_CLIENTS) {
+            printf("Server is full with %d/%d sowwy :(\n", total_clients, MAX_CLIENTS);
+            free(clia);
+            close(clifd);
+            continue;
+        }
+
         int id = fork();
         if(id < 0){
             perror("fork");
@@ -97,7 +106,10 @@ main(int argc, char** argv)
             handle_request(clifd, clia);
         } 
         if(id > 0){
-            close(clifd);
+            total_clients++;
+            printf("Client connected: %d/%d\n", total_clients, MAX_CLIENTS);
+            close(clifd); // close socket
+            free(clia);
             continue;
         }
     }
@@ -108,7 +120,7 @@ quit(int signo)
 {
     printf("Shutting down server...\n");
     // if ctrl-C is given
-    close(sockfd);
+    close(sockfd); // close listening socket
     exit(EXIT_SUCCESS);
 }
 
@@ -116,7 +128,9 @@ void
 sub_client(int signo)
 {
     while(waitpid(-1, NULL, WNOHANG) > 0) {
-        printf("Reaped a zombie child\n");
+        
+        total_clients--;
+        printf("\nChild killed, client disconnected %d/%d\n", total_clients, MAX_CLIENTS);
     }
 }
 
@@ -142,7 +156,7 @@ handle_request(int clifd, struct sockaddr_in* clia)
         }
     }
 
-    close(clifd);
+    close(clifd); // close accept socket for this child
     free(clia);
     exit(EXIT_SUCCESS); 
 }

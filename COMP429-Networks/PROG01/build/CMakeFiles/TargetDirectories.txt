@@ -1,0 +1,4 @@
+/home/maxscharkopf/Documents/GitHub/CSUCI-Coursework/COMP429-Networks/PROG01/build/CMakeFiles/echosrv.dir
+/home/maxscharkopf/Documents/GitHub/CSUCI-Coursework/COMP429-Networks/PROG01/build/CMakeFiles/echocli.dir
+/home/maxscharkopf/Documents/GitHub/CSUCI-Coursework/COMP429-Networks/PROG01/build/CMakeFiles/edit_cache.dir
+/home/maxscharkopf/Documents/GitHub/CSUCI-Coursework/COMP429-Networks/PROG01/build/CMakeFiles/rebuild_cache.dir
